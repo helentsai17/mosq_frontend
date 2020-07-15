@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>神通資訊平台</title>
+    <!-- favicon -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <!-- iconmoon -->
+    <link rel="stylesheet" href="/assets/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/css/custom/obj_style.css?v=1.00999">
+    <!-- d3js -->
+    <script src="https://d3js.org/d3.v3.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-col col-left">
+                <a href="/" class="logo-box">
+                    <img src="/assets/images/logo/logo.svg" class="img-logo" alt="" srcset="">
+                    <div class="logo-txt" style="color:#fff">
+                        科技防疫v1.0
+                    </div>
+                </a>
+            </div>
+            <div class="header-col col-mid">
+            </div>
+            <div class="header-col col-right mobile-menu">
+                <!-- mobile -->
+                <span class="login-info mobile">
+                    登入 : 2020/06/25 17:01
+                </span>
+                <ul>
+                    <li class="menu-item mobile">
+                        <div class="logo-txt">
+                            科技防疫v1.0
+                        </div>
+                    </li>
+                    <li class="menu-item item-user">
+                        <i class="item-icon icon-user"></i>
+                        <span class="user-title">
+                            環保局局長
+                        </span>
+                        <!-- pc -->
+                        <span class="login-info ml-2 pc">
+                            登入 : 2020/06/25 17:01
+                        </span>
+                    </li>
+                    <li class="menu-item item-lang">
+                        <div class="form-group mb-0">
+                            <div class="input-group input-group-select">
+                                <select class="custom-select select-lang">
+                                    <option value="zh">中文</option>
+                                    <option value="en">English</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- backgrop -->
+            <div class="backdrop"></div>
+            <!-- menu-trigger -->
+            <div class="menu-trigger">
+                <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
+                <div class="burger burger-rotate">
+                    <div class="burger-lines"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page p-sty-panel p-index">
+        <div class="breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="javascript:;">首頁</a></li>
+                    <li><a href="javascript:;">風險地圖</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel-custom container">
+            <div class="panel-col left">
+
+            </div>
+            <div class="panel-col mid">
+                <!-- box row -->
+                <div class="info-box-row row">
+                    <div class="col-6 col-xl-3 col-box">
+                        <div class="info-box color-yellow">
+                            <div class="box-main">
+                                <div class="main-sup">
+                                    <div class="info-title">
+                                        環保局局長
+                                    </div>
+                                </div>
+                                <div class="main-sub">
+                                    <div class="info-txt pull-up">
+                                        會員身份
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-side">
+                                <i class="box-icon icon-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-xl-3 col-box">
+                        <div class="info-box color-red box-1">
+                            <div class="box-main">
+                                <div class="main-sup">
+                                    <div class="info-num">
+                                        30
+                                    </div>
+                                    <div class="info-txt">
+                                        確診人數
+                                    </div>
+                                </div>
+                                <div class="main-sub">
+                                    <div class="info-txt">
+                                        0境外 / 30境內
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-side">
+                                <i class="box-icon icon-group"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-xl-3 col-box">
+                        <div class="info-box color-purple">
+                            <div class="box-main">
+                                <div class="main-sup">
+                                    <div class="info-num">
+                                        3
+                                    </div>
+                                    <div class="info-txt">
+                                        高風險區域
+                                    </div>
+                                </div>
+                                <div class="main-sub">
+                                    <div class="info-txt">
+                                        未來高風險:8
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-side">
+                                <i class="box-icon icon-location"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-xl-3 col-box">
+                        <div class="info-box color-green">
+                            <div class="box-main">
+                                <div class="main-sup">
+                                    <div class="info-num">
+                                        <span class="up">0</span>/<span class="down">3</span>
+                                    </div>
+                                </div>
+                                <div class="main-sub">
+                                    <div class="info-txt">
+                                        死亡率/康復率
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-side">
+                                <i class="box-icon icon-comparison"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- map box -->
+                <div class="corner-box-row row">
+                    <div class="col-12 col-lg-6">
+                        <div class="corner-box color-blue box-1">
+                            <img src="/assets/images/corner1.png" class="corner left-top" alt="" srcset="">
+                            <img src="/assets/images/corner1.png" class="corner right-top" alt="" srcset="">
+                            <img src="/assets/images/corner1.png" class="corner left-bottom" alt="" srcset="">
+                            <img src="/assets/images/corner1.png" class="corner right-bottom" alt="" srcset="">
+                            <div class="corner-box-header">
+                                <div class="header-title">
+                                    <span class="signal-icon"></span>
+                                    當前疾病分布狀況
+                                </div>
+                            </div>
+                            <div class="corner-box-main">
+                                <div class="map-wrap spread box-main-inner">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="corner-box color-purple">
+                            <img src="/assets/images/corner2.png" class="corner left-top" alt="" srcset="">
+                            <img src="/assets/images/corner2.png" class="corner right-top" alt="" srcset="">
+                            <img src="/assets/images/corner2.png" class="corner left-bottom" alt="" srcset="">
+                            <img src="/assets/images/corner2.png" class="corner right-bottom" alt="" srcset="">
+                            <div class="corner-box-header">
+                                <div class="header-title">
+                                    <span class="signal-icon"></span>
+                                    預測未來狀況
+                                </div>
+                            </div>
+                            <div class="corner-box-main">
+                                <div class="map-wrap future box-main-inner">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- calendar -->
+                <div class="location-prompt mt-4 mb-1">
+                    <span class="signal-icon"></span>
+                    <div class="location-txt">
+                        台南
+                    </div>
+                    <span class="signal-icon"></span>
+                </div>
+                <div class="calendar-block custom-calendar">
+                    <!-- fullcalendar 套件 -->
+                </div>
+            </div>
+            <div class="panel-col right">
+
+            </div>
+        </div>
+        <div class="btn-list ">
+            <a class="btn btn-gradient-primary" href="javascript:;">
+                緊急化學防治
+            </a>
+            <a class="btn btn-gradient-secondary" href="javascript:;">
+                預防性化學防治
+            </a>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            2020 © MiTAC All Rights Reserved.
+        </div>
+    </footer>
+    <style>
+        .country-name .country-name-txt {
+            stroke-width: 1px;
+        }
+    </style>
+    <!-- Scrollbar -->
+    <script src="/plugin/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+    <script src="/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- Calendar -->
+    <script src="/plugin/fullcalendar-4.3.1/packages/core/main.min.js" title="核心"></script>
+    <script src="/plugin/fullcalendar-4.3.1/packages/daygrid/main.min.js" title=""></script>
+    <script src="/plugin/fullcalendar-4.3.1/packages/timegrid/main.min.js" title=""></script>
+    <script src="/plugin/fullcalendar-4.3.1/packages/interaction/main.min.js" title="互動"></script>
+    <script src="/plugin/fullcalendar-4.3.1/packages/core/locales/zh-tw.js" title="中文化"></script>
+    <!-- custom -->
+    <script src="/assets/js/main.js?v=1.0047"></script>
+    <!-- 地圖 -->
+    <script>
+        // 更換語系 
+        $('.select-lang').change(function () {
+            var selected = this.value;
+            if (selected == 'en') {
+                location.href = '/tainan_en';
+            }
+        });
+        // 地圖上次位置
+        var prev_x, prev_y;
+        // D3.js
+        var svg = d3.select(".spread")
+            .append("svg")
+            .attr('class', 'map')
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .call(zoom)
+            .call(drag)
+            .append("g")
+            .attr("class", "country-wrap")
+            .call(function () {
+                map(".spread", "data/demo1.json");
+            });
+
+        var svg2 = d3.select(".future")
+            .append("svg")
+            .attr('class', 'map')
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .call(zoom)
+            .call(drag)
+            .append("g")
+            .attr("class", "country-wrap")
+            .call(function () {
+                map(".future", "data/demo2.json");
+            });
+
+        var svg3 = d3.select(".future")
+            .append("svg")
+            .attr('class', 'map')
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .call(zoom)
+            .call(drag)
+            .append("g")
+            .attr("class", "country-wrap")
+            .call(function () {
+                map(".future", "data/demo3.json");
+            });
+
+        function map(el, json_data) {
+            //1.地理資料檔: GeoJSON or TopoJSON
+            var projection;
+            d3.json(json_data, function (dataSet) {
+                var cases = [];
+                var nDataSet = d3.nest().key(function (d) {
+                    return d["區別"];
+                }).rollup(function (v) {
+                    return v.length;
+                }).entries(dataSet);
+                nDataSet.forEach(function (d) {
+                    cases[d.key] = d.values;
+                });
+                d3.json("data/tainan_topo.json", function (mapDataSet) {
+                    bind(el, mapDataSet, cases, 120.55, 23.1, 45000, 'TOWN_MOI_1080617');
+                    render(nDataSet);
+                });
+
+            });
+        }
+
+        d3.selectAll(".map-wrap svg").append("g").attr("class", "map-legend").attr("transform", "translate(18, 82)")
+
+
+        var itme_height = 0;
+        colors.forEach(function (item, index) {
+            d3.selectAll(".map-legend").append("g").attr("class", "legend-item" + index).attr("transform", "translate(0, " + itme_height + ")")
+            var el = ".legend-item" + index;
+            var now = d3.selectAll(el);
+            now.append("rect").attr({
+                "class": "swatch",
+                "width": 16,
+                "height": 16,
+                fill: function () {
+                    return item.color;
+                }
+            })
+            now.append("text").attr({
+                "class": "legend-item-txt",
+                "transform": "translate(23,14)",
+                fill: function () {
+                    return "#fff";
+                }
+            }).text(function () {
+                return item.title;
+            });
+
+            itme_height = itme_height + 22;
+        })
+
+        function render(el, dataSet) {
+            d3.selectAll("path")
+                .attr({
+                    fill: function (d) {
+                        var now = d.properties.count || 0;
+                        switch (true) {
+                            case (now < 10):
+                                return colors[0].color;
+                                break;
+                            case (now < 20):
+                                return colors[1].color;
+                                break;
+                            case (now < 30):
+                                return colors[2].color;
+                                break;
+                            case (now < 40):
+                                return colors[3].color;
+                                break;
+                            default:
+                                return colors[3].color;
+                                break;
+                        }
+                    }
+                });
+
+            d3.selectAll(".country").on('click', nodeClick);
+        }
+
+        function nodeClick(d) {
+            if (d3.event.defaultPrevented) return; // dragged
+            var url = "/tainan/detail";
+            window.location = url;
+        }
+
+        function getTextBox(selection) {
+            selection
+                .each(function (d) {
+                    d.bbox = this
+                        .getBBox();
+                })
+                ;
+        }
+
+        // 地圖大小調整
+        var is_map_resized = false;
+        // 地圖置中
+        var is_map_centered = false;
+        function bind(el, topoRoot, dataSet, x, y, scale, objects) {
+
+            projection = d3.geo.mercator().center([x, y]).scale(scale);
+            var path = d3.geo.path().projection(projection);
+            var geoRoot = topojson.feature(topoRoot, topoRoot.objects[objects]);
+
+
+            geoRoot.features.forEach(function (d) {
+                if (dataSet[d.properties.TOWNNAME]) {
+                    d.properties.count = dataSet[d.properties.TOWNNAME];
+                }
+                else if (d.properties.TOWNNAME[0] === "臺") {
+                    d.properties.count = dataSet["台" + d.properties.TOWNNAME.substr(1)];
+                }
+                else {
+                    d.properties.count = 0;
+                }
+            });
+
+            // 綁定path與載入的地理資料(features:每一地理區劃)
+            var el_path = el + " svg g";
+            var selection = d3.select(el_path).selectAll("path").data(geoRoot.features);
+
+            selection.enter().append("g").attr("class", "country detect-border").append("path").classed("map-boundary", true).attr("d", path);
+            selection.exit().remove();
+
+            d3.select(el + " .country-wrap").append("g").attr("class", "country-name-list");
+
+            var el_country_name = el + " .country-name-list";
+            var selection_country_name = d3.select(el_country_name).selectAll(".country-name-list").data(geoRoot.features);
+
+            // color section ？？
+            selection_country_name.enter().append("g").attr("class", "country-name").append("text").attr("x", function (d) {
+                if (d.properties.TOWNNAME == '安平區') {
+                    return -10;
+                } else if (d.properties.TOWNNAME == '南化區') {
+                    return 10;
+                } else if (d.properties.TOWNNAME == '中西區') {
+                    return 10;
+                } else {
+                    return 0;
+                }
+
+            }).attr("y", function (d) {
+                if (d.properties.TOWNNAME == '六甲區' || d.properties.TOWNNAME == '山上區') {
+                    return 5;
+                } else if (d.properties.TOWNNAME == '南化區') {
+                    return 10;
+                } else {
+                    return 0;
+                }
+            })
+                .style("text-anchor", "middle").attr("class", function (d) {
+                    return "country-name-txt xl"
+                }).text(function (d) {
+                    return d.properties.TOWNNAME;
+                }).call(getTextBox);
+            d3.selectAll('.country-name-txt').attr("transform", function (d) {
+                return (
+                    "translate(" + path.centroid(d)[0] + "," + path.centroid(d)[1] + ")"
+                );
+            });
+
+
+            // 地圖 大小
+            if (!is_map_resized) {
+                map_resize({
+                    map_wrap: d3.select('.box-1 .map-wrap'),
+                    resize_target: d3.selectAll('.country-wrap'),
+                    scale_max: 1,
+                    scale_min: 0.7,
+                    zoom: zoom
+                })
+            }
+            // 地圖置中
+            if (!is_map_centered) {
+                map_center({
+                    map_wrap: d3.select('.box-1 .map-wrap'),
+                    center_target: d3.selectAll(' .country-wrap'),
+                    zoom: zoom
+                })
+            }
+        }
+
+
+    </script>
+    <!-- 日曆 -->
+    <script>
+        // FullCalendar 套件 
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.querySelector('.calendar-block');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                locale: 'zh-tw',
+                plugins: ['interaction', 'dayGrid', 'timeGrid'],
+                header: {
+                    left: 'today prev, next',
+                    center: 'title',
+                    right: 'timeGridWeek , dayGridMonth,'
+                },
+                // defaultDate: '2019-08-12',
+                navLinks: true, // can click day/week names to navigate views
+                selectable: true,
+                editable: true,
+                selectMirror: true,
+                eventLimit: true, // allow "more" link when too many events
+                // height: 'parent',
+                // 點擊行程
+                eventClick: function (info) {
+                    console.log('點擊了事件 :' + info.event.title)
+                },
+                // 點擊日期
+                dateClick: function (arg) {
+                    console.log('點擊了日期 :' + calendar.formatIso(arg.date))
+                },
+                events: [
+                    // 行程列表
+                    {
+                        id: 1_1,
+                        title: '高風險：10區',
+                        start: '2020-07-01',
+                        end: '2020-07-01',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 1_2,
+                        title: '中高風險：5區',
+                        start: '2020-07-01',
+                        end: '2020-07-01',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 1_3,
+                        title: '中風險：5區',
+                        start: '2020-07-01',
+                        end: '2020-07-01',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 2_1,
+                        title: '高風險：8區',
+                        start: '2020-07-02',
+                        end: '2020-07-02',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 2_2,
+                        title: '中高風險：4區',
+                        start: '2020-07-02',
+                        end: '2020-07-02',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 2_3,
+                        title: '中風險：8區',
+                        start: '2020-07-02',
+                        end: '2020-07-02',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 3_1,
+                        title: '高風險：2區',
+                        start: '2020-07-03',
+                        end: '2020-07-03',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 3_2,
+                        title: '中高風險：8區',
+                        start: '2020-07-03',
+                        end: '2020-07-03',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 3_3,
+                        title: '中風險：10區',
+                        start: '2020-07-03',
+                        end: '2020-07-03',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 4_1,
+                        title: '高風險：2區',
+                        start: '2020-07-04',
+                        end: '2020-07-04',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 4_2,
+                        title: '中高風險：3區',
+                        start: '2020-07-04',
+                        end: '2020-07-04',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 4_3,
+                        title: '中風險：15區',
+                        start: '2020-07-04',
+                        end: '2020-07-04',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 5_1,
+                        title: '高風險：2區',
+                        start: '2020-07-05',
+                        end: '2020-07-05',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 5_2,
+                        title: '中高風險：3區',
+                        start: '2020-07-05',
+                        end: '2020-07-05',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 5_3,
+                        title: '中風險：15區',
+                        start: '2020-07-05',
+                        end: '2020-07-05',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 6_1,
+                        title: '高風險：2區',
+                        start: '2020-07-06',
+                        end: '2020-07-06',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 6_2,
+                        title: '中高風險：1區',
+                        start: '2020-07-06',
+                        end: '2020-07-06',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 6_3,
+                        title: '中風險：17區',
+                        start: '2020-07-06',
+                        end: '2020-07-06',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 7_1,
+                        title: '高風險：7區',
+                        start: '2020-07-07',
+                        end: '2020-07-07',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 7_2,
+                        title: '中高風險：1區',
+                        start: '2020-07-07',
+                        end: '2020-07-07',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 7_3,
+                        title: '中風險：12區',
+                        start: '2020-07-07',
+                        end: '2020-07-07',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 8_1,
+                        title: '高風險：7區',
+                        start: '2020-07-08',
+                        end: '2020-07-08',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 8_2,
+                        title: '中高風險：8區',
+                        start: '2020-07-08',
+                        end: '2020-07-08',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                    {
+                        id: 8_3,
+                        title: '中風險：5區',
+                        start: '2020-07-08',
+                        end: '2020-07-08',
+                        color: 'rgba(0,0,0,0)'
+                    },
+                ]
+
+            });
+
+
+            calendar.render();
+
+            // scroll bar 樣式
+            function custom_calendar_scrollbar() {
+                $(".fc-scroller").mCustomScrollbar({
+                    callbacks: {
+                        // 有scrollbar
+                        onOverflowY: function () {
+                            $('.custom-calendar').addClass('scrollbar-mode')
+                        },
+                        // 沒有scrollbar
+                        onOverflowYNone: function () {
+                            $('.custom-calendar').removeClass('scrollbar-mode')
+                        }
+                    }
+                });
+            }
+
+            custom_calendar_scrollbar();
+
+            $('body').on('click', '.fc-right button', function () {
+                custom_calendar_scrollbar();
+            })
+
+            $(window).on('resize load', function () {
+                if (window.innerWidth < 650) {
+                    calendar.setOption('aspectRatio', 0.8);
+                }
+            })
+
+        });
+    </script>
+    <!-- CSS -->
+    <script type="text/javascript" defer="defer">
+        var cssListAll = function () {
+            var cssList = [
+                '/assets/css/font-awesome.min.css',
+                // animate
+                'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css',
+                // MScrollbar
+                '/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css',
+                // calendar core
+                '/plugin/fullcalendar-4.3.1/packages/core/main.min.css',
+                // Calendar
+                '/plugin/fullcalendar-4.3.1/packages/daygrid/main.min.css',
+                // Calendar
+                '/plugin/fullcalendar-4.3.1/packages/timegrid/main.min.css',
+            ]
+
+            var cssAll = document.getElementsByTagName('head')[0];
+            cssList.forEach(function (item, index) {
+                var a = document.createElement('link');
+                a.rel = 'stylesheet';
+                a.type = 'text/css';
+                a.href = item;
+                cssAll.parentNode.insertBefore(a, cssAll);
+            })
+
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+            webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(cssListAll);
+        else window.addEventListener('load', cssListAll);
+    </script>
+</body>
+
+</html>

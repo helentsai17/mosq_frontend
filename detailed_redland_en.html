@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dashboard</title>
+    <!-- favicon -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <!-- iconmoon -->
+    <link rel="stylesheet" href="/assets/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/css/custom/obj_style.css?v=1.009999">
+    <!-- d3js -->
+    <script src="https://d3js.org/d3.v3.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-col col-left">
+                <a href="/index_australia.html" class="logo-box">
+                    <img src="/assets/images/logo/logo.svg" class="img-logo" alt="" srcset="">
+                    <div class="logo-txt" style="color:#fff">
+                        Science and technology v1.0
+                    </div>
+                </a>
+            </div>
+
+            <div class="header-col col-mid">
+            </div>
+            <div class="header-col col-right mobile-menu">
+                <!-- mobile -->
+                <span class="login-info mobile">
+                    login : 2020/06/25 17:01
+                </span>
+                <ul>
+                    <li class="menu-item mobile">
+                        <div class="logo-txt">
+                            login : 2020/06/25 17:01
+                        </div>
+                    </li>
+                    <li class="menu-item item-user">
+                        <i class="item-icon icon-user"></i>
+                        <span class="user-title">
+                           EPA bureau director
+                        </span>
+                        <!-- pc -->
+                        <span class="login-info ml-2 pc">
+                            login : 2020/06/25 17:01
+                        </span>
+                    </li>
+                    <li class="menu-item item-lang">
+                        <div class="form-group mb-0">
+                            <div class="input-group input-group-select">
+                                <select class="custom-select select-lang">
+                                    <option value="zh">中文</option>
+                                    <option value="en" selected="">English</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- backgrop -->
+            <div class="backdrop"></div>
+            <!-- menu-trigger -->
+            <div class="menu-trigger">
+                <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
+                <div class="burger burger-rotate">
+                    <div class="burger-lines"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page p-sty-panel p-detailed">
+        <div class="breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li><a href="javascript:;">Home</a></li>
+                    <li><a href="index_australia.html">Risk map</a></li>
+                    <li><a href="javascript:;">Data graph</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="location-prompt sty-select">
+                <span class="signal-icon"></span>
+                <div class="location-txt">
+                    <div class="form-group" style="margin-right: 0">
+                        <div class="input-group input-group-select">
+                            <select class="custom-select select-district">
+                                <option value="Capalaba , /data/demo_detailed.json">Capalaba</option>
+                                <option value="Redland Bay , /data/demo_detailed2.json">Redland Bay</option>
+                            </select>
+                        </div>
+                        <span class="vil-txt"></span>
+                    </div>
+                </div>
+                <span class="signal-icon"></span>
+            </div>
+            <div class="panel-custom">
+                <div class="panel-col left">
+    
+                </div>
+                <div class="panel-col mid">
+                    <!-- box row -->
+                    <div class="info-box-row row">
+                        <div class="col-6 col-xl-3 col-box">
+                            <div class="label-box color-red">
+                                <div class="box-title">
+                                    Critical  (<span class="region-count">5</span>)
+                                </div>
+                                <div class="box-main scrollbar-wrap">
+                                    <div class="col-label">
+                                        <a  href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil1.json">
+                                            Capalaba
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;"  class="label change-detaile" data-source="/data/demo_detailed_vil2.json">
+                                            Redland Bay
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;"  class="label change-detaile" data-source="/data/demo_detailed_vil3.json">
+                                            Thornlands
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;"  class="label change-detaile" data-source="/data/demo_detailed_vil4.json">
+                                            Sheldon
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;"  class="label change-detaile" data-source="/data/demo_detailed_vil5.json">
+                                            Mount Cotton
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-xl-3 col-box">
+                            <div class="label-box color-orange">
+                                <div class="box-title">
+                                     High  (<span class="region-count">5</span>)
+                                </div>
+                                <div class="box-main scrollbar-wrap">
+                                    
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil1.json">
+                                            Capalaba
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil2.json">
+                                            Redland Bay
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil3.json">
+                                            Thornlands
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil4.json">
+                                            Sheldon
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil5.json">
+                                            Mount Cotton
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-xl-3 col-box">
+                            <div class="label-box color-yellow">
+                                <div class="box-title">
+                                    Moderate (<span class="region-count">5</span>)
+                                </div>
+                                <div class="box-main scrollbar-wrap">
+                                    
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil1.json">
+                                            Capalaba
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil2.json">
+                                            Redland Bay
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil3.json">
+                                            Thornlands
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil4.json">
+                                            Sheldon
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil5.json">
+                                            Mount Cotton
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-xl-3 col-box">
+                            <div class="label-box color-green">
+                                <div class="box-title">
+                                    Low (<span class="region-count">5</span>)
+                                </div>
+                                <div class="box-main scrollbar-wrap">
+                                    
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil1.json">
+                                            Capalaba
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil2.json">
+                                            Redland Bay
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil3.json">
+                                            Thornlands
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil4.json">
+                                            Sheldon
+                                        </a>
+                                    </div>
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil5.json">
+                                            Mount Cotton
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- map box -->
+                    <div class="corner-box-row row">
+                        <div class="col-12 m-auto">
+                            <div class="corner-box barchar-mix-box color-blue mb-3">
+                                <img src="/assets/images/corner1.png" class="corner left-top" alt="" srcset="">
+                                <img src="/assets/images/corner1.png" class="corner right-top" alt="" srcset="">
+                                <img src="/assets/images/corner1.png" class="corner left-bottom" alt="" srcset="">
+                                <img src="/assets/images/corner1.png" class="corner right-bottom" alt="" srcset="">
+                                <div class="corner-box-main">
+                                    <h2 class="chart-title">Index of dengue fever</h2>
+                                    <div class="line-chart box-main-inner" id="chart1-wrap">
+                                        <div class="aspect-ratio">
+                                            <canvas id="chart1"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-white text-right mb-4">
+                                Last update time : <span class="time">2020/06/25 17:01</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- calendar -->
+                    <div class="location-prompt mt-4 mb-1">
+                        <span class="signal-icon"></span>
+                        <div class="location-txt calendar-location">
+                            Capalaba
+                        </div>
+                        <span class="signal-icon"></span>
+                    </div>
+                    <div class="calendar-block custom-calendar">
+                        <!-- fullcalendar 套件 -->
+                    </div>
+                </div>
+                <div class="panel-col right">
+                </div>
+            </div>
+            <div class="btn-list ">
+                <a class="btn btn-gradient-primary" href="javascript:;">
+                    Emergency chemical protection
+                </a>
+                <a class="btn btn-gradient-secondary" href="javascript:;">
+                    Protecting chemical solution
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            2020 © MiTAC All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src='https://www.chartjs.org/dist/2.9.3/Chart.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js'></script>
+    <!-- lodash -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.core.min.js"></script>
+    <!-- Scrollbar -->
+    <script src="/plugin/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+    <script src="/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- Calendar -->
+    <script src="/plugin/fullcalendar-4.3.1/packages/core/main.min.js" title="核心"></script>
+    <script src="/plugin/fullcalendar-4.3.1/packages/daygrid/main.min.js" title=""></script>
+    <script src="/plugin/fullcalendar-4.3.1/packages/timegrid/main.min.js" title=""></script>
+    <script src="/plugin/fullcalendar-4.3.1/packages/interaction/main.min.js" title="互動"></script>
+    <!-- chartjs -->
+    <script src='https://www.chartjs.org/samples/latest/utils.js'></script>
+    <!-- axios -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.10.2/underscore-min.js'></script>
+    <!-- custom -->
+    <script src="/assets/js/main.js?v=1.0046"></script>
+    <!-- 卷軸 -->
+    <script>
+        $(function () {
+            var scroll_wrap = $(".scrollbar-wrap");
+            scroll_wrap.mCustomScrollbar();
+
+            $(window).on('load', function () {
+                scroll_wrap.mCustomScrollbar("update");
+                scroll_wrap.mCustomScrollbar("scrollTo", 'top', {
+                    scrollInertia: 0
+                });
+            })
+        });
+    </script>
+    <!-- 地圖 -->
+    <script>
+        $(function(){
+            // 取得 圖表 比例
+            function get_aspect_ratio(aspect_ratio_el) {
+                var aspect_ratio_dom = $(aspect_ratio_el);
+                var aspect_ratio_w = aspect_ratio_dom.outerWidth();
+                var aspect_ratio_h = aspect_ratio_dom.outerHeight();
+                var ratio = aspect_ratio_w / aspect_ratio_h;
+                var percent = ratio * 100;
+
+                return {
+                    percent: percent,
+                    ratio: ratio
+                }
+            }
+
+            // 更新 圖表 比例
+            function update_aspect_ratio(aspect_ratio_el) {
+                var chart_info = $('#chart1').data('chartjs');
+                var aspect_ratio_dom = $(aspect_ratio_el);
+                var ratio = get_aspect_ratio(aspect_ratio_el).ratio;
+                // 設定新值
+                chart_info.instance.aspectRatio = ratio;
+                chart_info.instance.update();
+            }
+
+            // 表格 長寬比
+            var win_w = window.innerWidth;
+            var chart_ratio = get_aspect_ratio($('#chart1-wrap .aspect-ratio')).ratio
+
+            // 表格 欄位 設定
+            var chart_dataset_setting = {
+                '布氏指數': {
+                    // 顯示名稱
+                    label: 'Breteau index',
+                    formalName: '布氏指數',
+                    // 群組識別
+                    groupId: '布氏指數',
+                    steppedLine: false,
+                    type: 'line',
+                    // 背景色
+                    pointBackgroundColor: 'rgba(253, 228, 159, 1)',
+                    // hover時 背景色
+                    pointHoverBackgroundColor: 'rgba(253, 228, 159, .1)',
+                    borderWidth: 1,
+                    // 邊界顏色
+                    borderColor: 'rgba(253, 228, 159, 1)',
+                    // hvoer時 邊界顏色
+                    hoverBorderColor: 'rgba(253, 228, 159, .1)',
+                    data: [],
+                },
+
+                '成蟲指數': {
+                    label: 'Adult index*100',
+                    formalName: '成蟲指數',
+                    // 群組識別
+                    groupId: '成蟲指數',
+                    type: 'line',
+                    pointBackgroundColor: 'rgba(178, 178, 250, 1)',
+                    pointHoverBackgroundColor: 'rgba(178, 178, 250, .1)',
+                    borderWidth: 1,
+                    borderColor: 'rgba(178, 178, 250, 1)',
+                    hoverBorderColor: 'rgba(178, 178, 250, .1)',
+                    data: [],
+                },
+
+
+                '每百戶積水容器數': {
+                    label: 'Container index',
+                    formalName: '每百戶積水容器數',
+                    // 群組識別
+                    groupId: '每百戶積水容器數',
+                    type: 'line',
+                    pointBackgroundColor: 'rgba(254, 188, 188, 1)',
+                    pointHoverBackgroundColor: 'rgba(254, 188, 188, .1)',
+                    borderWidth: 1,
+                    borderColor: 'rgba(254, 188, 188, 1)',
+                    hoverBorderColor: 'rgba(254, 188, 188, .1)',
+                    data: [],
+                },
+            }
+
+            // Hover 狀態 Flag
+            var node;
+            var clientX_flag = 0;
+            var clientY_flag = 0;
+            // legend action 管控
+            var legend_action_timeout;
+
+            // 表格 整體 設定
+            var chart_option = {
+                responsive: true,
+                aspectRatio: chart_ratio,
+                maintainAspectRatio: true,
+                layout: {
+                    padding: {
+                        left: 15,
+                        right: 15,
+                        top: 0,
+                        bottom: 0
+                    }
+                },
+                // 圖表 resize
+                onResize: function (instance, size) {
+                    var window_w = window.innerWidth;
+                    var aspect_ratio_el = $(instance.canvas).closest('.aspect-ratio');
+
+                    // 更新比例
+                    update_aspect_ratio(aspect_ratio_el);
+                    instance.aspectRatio = get_aspect_ratio($('#chart1-wrap .aspect-ratio')).ratio
+                    instance.update();
+
+                },
+                animation: {
+                    easing: 'easeInOutQuad',
+                    duration: 520
+                },
+                // 刻度
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            color: 'rgba(200, 200, 200, 0.05)',
+                            lineWidth: 1
+                        },
+                        scaleLabel: {
+                            display: true,
+                            fontColor: 'rgba(255,255,255,.7)',
+                            fontSize: 12,
+                            labelString: 'Weekly'
+                        },
+                        ticks: {
+                            // 刻度
+                            fontColor: 'rgba(255,255,255,.7)'
+                        }
+                    }],
+                    yAxes: [
+                        {
+                            position: 'right',
+                            gridLines: {
+                                color: 'rgba(200, 200, 200, 0.08)',
+                                lineWidth: 1
+                            },
+                            scaleLabel: {
+                                display: true,
+                                fontColor: 'rgba(255,255,255,.7)',
+                                fontSize: 12,
+                                labelString: 'Container index'
+                            },
+                            ticks: {
+                                // 刻度
+                                max: 80,
+                                min: 0,
+                                stepSize: 20,
+                                fontColor: 'rgba(255,255,255,.7)'
+                            }
+                        }, {
+                            position: 'left',
+                            gridLines: {
+                                color: 'rgba(200, 200, 200, 0.08)',
+                                lineWidth: 1
+                            },
+                            scaleLabel: {
+                                display: true,
+                                fontColor: 'rgba(255,255,255,.7)',
+                                fontSize: 12,
+                                labelString: 'Breteau index / Adult index*100'
+                            },
+                            ticks: {
+                                // 刻度
+                                max: 60,
+                                min: 0,
+                                stepSize: 10,
+                                fontColor: 'rgba(255,255,255,.7)'
+                            }
+                        }
+                    ]
+                },
+                elements: {
+                    line: {
+                        tension: 0.4
+                    }
+                },
+                legendCallback: function (chart) {
+                    var legend_items = chart.legend.legendItems;
+                    // Return the HTML string here.
+                    return '<div>ok</div>';
+                },
+                legend: {
+                    labels: {
+                        fontColor: '#ffff',
+                        padding: 15,
+                    },
+                    onHover: function (e, info) {
+                        // 避免 連續處發
+                        clearTimeout(legend_action_timeout);
+                        legend_action_timeout = setTimeout(function () {
+
+                            // target chart
+                            var charts = $('.corner-box canvas');
+
+                            charts.each(function (idx, chart) {
+                                var chart = $(chart);
+                                var chart_info = chart.data('chartjs');
+                                var instance = chart_info.instance;
+                                // 當前圖表所有 dataset
+                                var datasets = instance.data.datasets;
+                                // 當前hover dataset
+                                var target_dataset = datasets[info.datasetIndex];
+                                var group_id = target_dataset.groupId;
+                                var target_group = _.filter(datasets, { groupId: group_id })
+                                var this_name = target_dataset.formalName;
+                                // 當前 hover 對應的dataset
+                                if (target_dataset) {
+
+                                    datasets.forEach(function (dataset, i) {
+                                        var label = dataset.formalName; // label 名稱
+                                        var type = dataset.type; // 圖形種類
+                                        var config_obj = chart_dataset_setting[label];
+
+                                        // 依圖種類 更換對應 區塊顏色
+                                        if ('line' === type) {
+                                            dataset.borderColor = config_obj.hoverBorderColor;
+                                            dataset.pointBackgroundColor = config_obj.pointHoverBackgroundColor;
+                                        } else {
+                                            dataset.borderColor = config_obj.hoverBorderColor;
+                                            dataset.backgroundColor = 'rgba(102, 225, 245, 0.1)';
+                                        }
+
+                                    });
+
+                                    // 依圖種類 更換當前hover圖表對應 區塊顏色
+                                    target_group.forEach(function (target_dataset, idx) {
+                                        var this_name = target_dataset.formalName;
+                                        if ('line' === target_dataset.type) {
+                                            target_dataset.borderColor = chart_dataset_setting[this_name].borderColor;
+                                            target_dataset.pointBackgroundColor = chart_dataset_setting[this_name].pointBackgroundColor;
+                                        } else {
+                                            target_dataset.borderColor = chart_dataset_setting[this_name].borderColor;
+                                            target_dataset.backgroundColor = chart_dataset_setting[this_name].backgroundColor;
+                                        }
+                                    })
+                                }
+
+                                instance.update();
+                            });
+                        }, 100);
+
+                    },
+                    onLeave: function (e, legendItem) {
+                        // 避免 連續處發
+                        clearTimeout(legend_action_timeout);
+                        legend_action_timeout = setTimeout(function () {
+
+                            // target chart
+                            var charts = $('.corner-box canvas');
+
+                            charts.each(function (idx, chart) {
+                                var chart = $(chart);
+                                var chart_info = chart.data('chartjs');
+                                var instance = chart_info.instance;
+                                var datasets = instance.data.datasets;
+
+                                datasets.forEach(function (dataset, i) {
+                                    var label = dataset.formalName; // label 名稱
+                                    var type = dataset.type; // 圖形種類
+                                    var config_obj = chart_dataset_setting[label];
+
+                                    // 依圖種類 更換對應 區塊顏色
+                                    if (type && 'line' === type) {
+                                        dataset.borderColor = config_obj.borderColor;
+                                        dataset.pointBackgroundColor = config_obj.pointBackgroundColor;
+                                    } else {
+                                        dataset.borderColor = config_obj.borderColor;
+                                        dataset.backgroundColor = config_obj.backgroundColor;
+                                    }
+                                });
+
+                                instance.update();
+                            });
+
+                        }, 100);
+                    },
+                },
+                point: {
+                    backgroundColor: '#333'
+                },
+                tooltips: {
+                    mode: 'index',
+                    callbacks: {
+                        title: function (tooltipItem, data) {
+                            // 周
+                            var week = tooltipItem[0]['xLabel'];
+
+                            return 'Week ' + week ;
+                        },
+                    },
+                    titleFontFamily: 'Open Sans',
+                    backgroundColor: 'rgba(0,0,0,0.3)',
+                    titleFontColor: '#fff',
+                    caretSize: 5,
+                    cornerRadius: 2,
+                    xPadding: 10,
+                    yPadding: 10,
+                }
+            };
+
+            // 週別數字陣列
+            var labels = [];
+
+            var chart_control = {
+                data: {
+                    // 預設年度
+                    default_year: 2019,
+                },
+                charts: [
+                    // 設定要那些表格
+                    {
+                        id: 1,
+                        el: '#chart1',
+                        instance: '',
+                        // 表格設定
+                        chart_option: chart_option,
+                        chart_dataset_setting: chart_dataset_setting,
+                        source_src: '/data/demo_detailed.json',
+                        source: '',
+                        datasets: [],
+                        info: {}
+                    },
+                ],
+                // 取得 星期 名稱陣列
+                get_weekname_all_year: function (period) {
+                    var arr = [];
+
+                    for (var i = 1; i <= 52; i++) {
+                        arr.push(i);
+                    }
+
+                    return arr;
+                },
+                // 取得特定年分
+                filter_by_year: function (chart_id, year) {
+                    var that = this;
+                    var chart = _.find(that.charts, { id: chart_id });
+                    var result = _.filter(chart.source, { "年份": year });
+
+                    return result
+                },
+                // 更新axis 刻度
+                update_axis: function () {
+                    var charts = this.charts;
+
+                    charts.forEach(function (chart, idx) {
+                        var info = chart.info;
+                        var instance = chart.instance;
+                        // 右
+                        var y_axis_0_max = _.max([info['每百戶積水容器數']['max']]);
+                        // 左
+                        var y_axis_1_max = _.max([info['布氏指數']['max'], info['成蟲指數']['max']]);
+
+                        // 最高刻度 = 最高數值 + 15
+                        // instance.options.scales.yAxes[0].ticks.max = y_axis_0_max + 15;
+                        instance.options.scales.yAxes[0].ticks.max = 150;
+                        instance.options.scales.yAxes[1].ticks.max = y_axis_1_max + 15;
+
+                        instance.update();
+                    });
+                },
+                // 產出 chart.js 格式 dataset
+                generate_chart_dataset: function (data_source, setting_obj) {
+                    // 回傳物件
+                    var result_obj = {
+                        datasets: [],
+                        info: {
+                        },
+                    };
+
+                    for (key in setting_obj) {
+                        var obj = setting_obj[key]
+                        // deep clone to prevent reference
+                        var dataset = $.extend(true, {}, obj);
+                        var target_key = key;
+
+                        if (!result_obj['info'][target_key]) {
+                            // init
+                            result_obj['info'][target_key] = {
+                                // 數值
+                                'num': [],
+                                // 總計
+                                'total': 0,
+                                // 最小
+                                'min': 0,
+                                // 最大
+                                'max': 0,
+                                // 平均
+                                'avg': 0,
+                                // 計數
+                                'count': 0,
+                            };
+                        }
+
+                        data_source.forEach(function (source_obj, idx) {
+                            if (target_key in source_obj) {
+
+                                var value = source_obj[target_key];
+                                // data
+                                dataset['data'].push(value);
+                                // info
+                                result_obj['info'][target_key]['num'].push(value);
+                                result_obj['info'][target_key]['total'] += Number(value);
+                                result_obj['info'][target_key]['count'] += 1;
+                            }
+                        });
+
+                        // 紀錄 avg min max
+                        result_obj['info'][target_key]['avg'] = (result_obj['info'][target_key]['total'] / result_obj['info'][target_key]['count']).toFixed(2);
+                        result_obj['info'][target_key]['min'] = _.min(result_obj['info'][target_key]['num']);
+                        result_obj['info'][target_key]['max'] = _.max(result_obj['info'][target_key]['num']);
+
+                        // result dataset
+                        result_obj.datasets.push(dataset);
+
+                    };
+
+                    return result_obj;
+                },
+                // 生成 chart
+                create_chart: function (chart_el, data, options) {
+                    this.charts.forEach(function (chart, idx) {
+                        axios.get(chart.source_src)
+                            .then(function (res) {
+                                chart.source = res.data;
+                                // 預設顯示年
+                                var default_year = chart_control.data.default_year;
+                                var filtered_source = chart_control.filter_by_year(chart.id, default_year);
+                                var dataset_info = chart_control.generate_chart_dataset(filtered_source, chart_dataset_setting);
+                                // 週別名稱陣列
+                                var labels = chart_control.get_weekname_all_year();
+
+                                // 紀錄表格 資訊
+                                chart.datasets = dataset_info.datasets;
+                                chart.info = dataset_info.info;
+
+                                // 套件建立表格
+                                var instance = new Chart($(chart.el), {
+                                    type: 'bar',
+                                    data: {
+                                        labels: labels,
+                                        datasets: chart.datasets,
+                                    },
+                                    options: chart_option
+                                });
+
+                                chart.instance = instance;
+
+                                // DOM 綁定 表格資料
+                                $(chart.el).data('chartjs', {
+                                    instance: instance,
+                                    chart_obj: chart
+                                });
+
+                            })
+                            .catch(function (error) {
+                                console.log(error);
+                            })
+                    })
+                },
+                // 更換地區
+                change_district: function (chart_id, source_json_url) {
+                    var chart = _.find(chart_control.charts, { id: chart_id });
+                    var instance = chart.instance;
+
+                    // 載入新資料
+                    axios.get(source_json_url)
+                        .then(function (res) {
+                            chart.source = res.data;
+                            // 預設顯示年
+                            var default_year = chart_control.data.default_year;
+                            var filtered_source = chart_control.filter_by_year(chart.id, default_year);
+                            var dataset_info = chart_control.generate_chart_dataset(filtered_source, chart_dataset_setting);
+                            // 週別名稱陣列
+                            var labels = chart_control.get_weekname_all_year();
+
+                            // 紀錄表格 資訊
+                            chart.datasets = dataset_info.datasets;
+                            chart.info = dataset_info.info;
+
+                            // 更新表格
+                            instance.data.datasets = dataset_info.datasets
+                            instance.update();
+                            chart_control.update_axis();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        })
+                }
+            }
+
+            // 表格建立
+            chart_control.create_chart();
+
+            // 更換語系 
+            $('.select-lang').change(function(){
+                var selected = this.value;
+                if ( selected == 'zh'){
+                    location.href='detailed_redland_zh.html';
+                }
+            });
+
+            // 更換行政區
+            $('.select-district').change(function () {
+                var selected = this.value.split(',');
+                var source_json_url = selected[1];
+
+                $('.change-detaile').removeClass('is-selected');
+                $('.calendar-location').text(selected[0]);
+                $('.vil-txt').text('');
+
+                // 更新圖表
+                chart_control.change_district(1, source_json_url);
+            });
+
+            // 區域點擊
+            $('.change-detaile').click(function (e) {
+                var labels = $('.change-detaile');
+                var label = $(this);
+                var is_selected = $(this).is('.is-selected');
+                var district_source_src = _.find(chart_control.charts, { id: 1 }).source_src;
+                var source_src;
+                console.log( label)
+                console.log( )
+                if (is_selected) {
+                    // 同一個 : 取消選取並讀取區的資料
+                    label.removeClass('is-selected');
+                    source_src = district_source_src;
+                    $('.vil-txt').text('');
+                } else {
+                    // 不同個 : 讀取該區域資料
+                    labels.removeClass('is-selected');
+                    label.addClass('is-selected');
+                    source_src = label.attr('data-source');
+                    $('.vil-txt').text(' - ' + label.context.innerText)
+                }
+
+                chart_control.change_district(1, source_src);
+
+            });
+
+
+            // 更新畫面
+            $(window).on('load', function () {
+                chart_control.update_axis();
+                update_aspect_ratio($('.aspect-ratio'));
+            })
+            
+        })
+    </script>
+    <!-- 日曆 -->
+    <script>
+        // FullCalendar 套件
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.querySelector('.calendar-block');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['interaction', 'dayGrid', 'timeGrid'],
+                header: {
+                    left: 'today prev, next',
+                    center: 'title',
+                    right: 'timeGridWeek , dayGridMonth,'
+                },
+                // height: height,
+                // defaultDate: '2019-08-12',
+                navLinks: true, // can click day/week names to navigate views
+                selectable: true,
+                editable: true,
+                selectMirror: true,
+                eventLimit: true, // allow "more" link when too many events
+                // 點擊行程
+                eventClick: function (info) {
+                    // console.log('點擊了事件 :'+ info.event.title)
+                },
+                // 點擊日期
+                dateClick: function (arg) {
+                    // console.log('點擊了日期 :'+ calendar.formatIso(arg.date))
+                },
+                events: [
+                    // 行程列表
+                    // {
+                    //     id: 1,
+                    //     title: '範例行程1',
+                    //     start: '2020-06-29',
+                    //     end: '2020-06-29',
+                    //     color: '#257e4a'
+                    // },
+                    // {
+                    //     id: 2,
+                    //     title: '範例行程2',
+                    //     start: '2020-06-30',
+                    //     end: '2020-06-30',
+                    //     color: '#257e4a'
+                    // },
+                ]
+
+            });
+
+            calendar.render();
+
+            // scroll bar 樣式
+            function custom_calendar_scrollbar() {
+                $(".fc-scroller").mCustomScrollbar({
+                    callbacks: {
+                        // 有scrollbar
+                        onOverflowY: function () {
+                            $('.custom-calendar').addClass('scrollbar-mode')
+                        },
+                        // 沒有scrollbar
+                        onOverflowYNone: function () {
+                            $('.custom-calendar').removeClass('scrollbar-mode')
+                        }
+                    }
+                });
+            }
+
+            custom_calendar_scrollbar();
+
+            $('body').on('click', '.fc-right button', function () {
+                custom_calendar_scrollbar();
+            })
+
+            $(window).on('resize load', function(){
+                if (window.innerWidth < 650) {
+                    calendar.setOption('aspectRatio', 0.8);
+                }
+            })
+
+        });
+    </script>
+    <!-- CSS -->
+    <script type="text/javascript" defer="defer">
+        var cssListAll = function () {
+            var cssList = [
+                '/assets/css/font-awesome.min.css',
+                // animate
+                'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css',
+                // MScrollbar
+                '/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css', 
+                // calendar core
+                '/plugin/fullcalendar-4.3.1/packages/core/main.min.css',
+                // Calendar
+                '/plugin/fullcalendar-4.3.1/packages/daygrid/main.min.css',
+                // Calendar
+                '/plugin/fullcalendar-4.3.1/packages/timegrid/main.min.css',
+            ]
+
+            var cssAll = document.getElementsByTagName('head')[0];
+            cssList.forEach(function (item, index) {
+                var a = document.createElement('link');
+                a.rel = 'stylesheet';
+                a.type = 'text/css';
+                a.href = item;
+                cssAll.parentNode.insertBefore(a, cssAll);
+            })
+
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+            webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(cssListAll);
+        else window.addEventListener('load', cssListAll);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+/* 編寫順序
+ *
+ * - 模組內建 a - z
+ *
+ */
+
+.e-hover{
+	&:hover{
+		cursor:pointer!important;
+	}
+}
+// Hover pointer/white text
+.e-hover--pt--wt{
+	transition: .3s all linear;
+	&:hover{
+		cursor:pointer!important;
+		color:white!important;
+	}
+}
+
+
+// Fadeout
+.fadeout{
+	opacity: 0;
+	max-height:0px;
+	&.faded{
+		transition: 1s all linear;
+		opacity:1;
+		max-height:1000px;
+	}
+}
+
+
+// btn hvoer
+@mixin  btn-hover-circle($circle-color: rgba($color-primary)) {
+    position: relative;
+    overflow: hidden;
+    &:before{
+        content:'';
+        display: block;
+        position: absolute;
+        // growing circle aniamte
+        width:0.1px;
+        height: 0.1px;
+        border-radius: 50%;
+        background: none;
+        left:50%;
+        top:50%;
+        transform: translateX(-50%) translateY(-50%);
+        transition: .6s ease-out;
+    }
+
+    &:hover{
+        background: none;
+        color: $color-primary;
+        &:before{
+            box-shadow: 0 0 0 100px $circle-color;
+        }
+    }
+
+    .btn-inner{
+        position: relative;
+    }
+}
+
+
+// signal icon
+@mixin signal-icon-hover{
+	animation-duration: 1s;
+	animation-name: signal-icon-ani-hover;
+	border-color: #f05050;
+	box-shadow:0 0 1em #f05050;
+	&:before{
+		background: #f05050;
+	}
+}
+
+
+
+// btn gradient
+@mixin  btn-gradient-sty-animate($bg: transparent) {
+	color:#fff;
+	border:1px solid $bg;
+	background: linear-gradient(to right, transparent 0%, $bg 50% 100%);
+	background-size: 200% 100%;
+	background-position: 0%;
+	transition: .3s ease-in;
+	&:hover{
+		color:#000;
+		background-position: 50%;
+	}
+}
