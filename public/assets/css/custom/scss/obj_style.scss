@@ -229,6 +229,12 @@ body{
 			}
 		}
 
+		.custom-select ~ .select2 .selection .select2-selection {
+			// select2
+			border: 1px solid #fff;
+		}
+
+
 		// login
 		.login-info{
 			&.mobile{
@@ -637,6 +643,7 @@ body{
 		color:#fff;
 		option{
 			color: #000;
+			font-family: "微軟正黑體", "Microsoft JhengHei";
 		}
         &:focus,&:active{
             // border-left:1px solid  #ced4da;
@@ -650,7 +657,115 @@ body{
         z-index: 10;
     }
 }
+
 // form (end)
+
+/* 套件 */
+/* select2 */
+.custom-select ~ .select2{
+    height: 40px;
+}
+.custom-select ~ .select2 .selection{
+	height: 100%;
+	display: block;
+}
+.custom-select ~ .select2 .selection .select2-selection{
+    /* select */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background:none;
+    border-bottom-right-radius: 5px!important;
+    border-top-right-radius: 5px!important;
+    box-shadow: none;
+    // min-height: 40px;
+    /* border */
+    border: 0; 
+	transition: .3s;
+	
+	font-family: "微軟正黑體", "Microsoft JhengHei";
+}
+@media (max-width:1200px){
+    .custom-select ~ .select2 .selection .select2-selection{
+        font-size: 16px;
+    }
+}
+@media (max-width:992px){
+    .custom-select ~ .select2 .selection .select2-selection{
+        font-size: 15px;
+    }
+}
+.custom-select ~ .select2 .selection .select2-selection__rendered{
+	/* select rendered */
+	color: #fff;
+	font-size: 1rem;
+}
+@media (max-width:992px){
+    .custom-select ~ .select2 .selection .select2-selection__rendered{
+        font-size: 15px;
+    }
+}
+.custom-select ~ .select2 .selection .select2-selection:hover {
+    border-color: #00CCFF;
+}
+.custom-select ~ .select2 .selection .select2-selection:active ,
+.custom-select ~ .select2 .selection .select2-selection:focus
+{
+    box-shadow: none;
+}
+.custom-select ~ .select2 .select2-selection__arrow{
+    /* select2's arrow */
+    display: none;
+}
+.select2-containr-sty-common.select2-dropdown{
+    /* drop-down */
+    box-shadow: 0 3px 3px #0000001A;
+    border: 0;
+}
+.select2-containr-sty-common.select2-dropdown.select2-dropdown--above {
+    /* above */
+    position: relative;
+    bottom: 10px;
+}
+.select2-containr-sty-common.select2-dropdown.select2-dropdown--below {
+    /* below */
+    position: relative;
+	top: 5px;
+	font-family: "微軟正黑體", "Microsoft JhengHei";
+}
+.select2-containr-sty-common li.select2-results__option{
+    /* drop-down option*/
+    padding: 3px 12px;
+    font-size: 18px;
+    /* font-weight: bold; */
+    color: #595959;
+}
+
+@media (max-width:992px){
+    .select2-containr-sty-common li.select2-results__option{
+        font-size: 15px;
+    }
+}
+
+.select2-containr-sty-common li.select2-results__option[aria-selected=true]{
+    /* aria-selected=true Active */
+    background-color: #fff;
+    color: #595959;
+}
+.select2-containr-sty-common li.select2-results__option[aria-selected=true]:hover{
+    /* aria-selected=true Active & hover */
+    color: #595959;
+    background-color: #f5f5f5;
+}
+
+.select2-containr-sty-common li.select2-results__option:not([aria-selected=true]).select2-results__option--highlighted{
+    /* drop-down option Hover */
+    color: #595959;
+    background-color: #f5f5f5;
+}
+
+/* select2 (end) */
+
 
 // logobox
 .logo-box{
@@ -1541,6 +1656,7 @@ body{
 	}
 
 	.fc-view {
+		z-index: auto;
 		// fc view
 		table{
 			background-color: rgba(#08101c, .3);
@@ -1620,6 +1736,21 @@ body{
 				display: block;
 				word-break: break-all;
 			}
+		}
+	}
+
+	// 顯示更多 popup
+	.fc-more-popover{
+		top: 41px;
+		left: 230px;
+		color: $color-font;
+		z-index: 10;
+		font-family: "微軟正黑體", "Microsoft JhengHei";
+		.fc-header{
+			padding: 0.3em .5em;
+		}
+		.fc-event-container{
+			padding: .5em .4em;
 		}
 	}
 
@@ -1741,6 +1872,22 @@ body{
 
 		.fc-day-header{
 			font-size: 15px;
+		}
+	}
+
+	@include media(430) {
+		.fc-view-container {
+			font-size: 14px;
+		}
+		.fc-ltr .fc-dayGrid-view .fc-day-top .fc-day-number {
+			// 1日、2日
+			font-size: 14px;
+		}
+		.fc-more-cell{
+			line-height: 1.2;
+		}
+		.fc-event-container{
+			line-height: 1.2;
 		}
 	}
 

@@ -284,6 +284,20 @@ function mobile_header_scrollbar() {
 }
 
 $(function(){
+    /*-----------------------------------------------------------------
+        Select2
+    -----------------------------------------------------------------*/
+    try {
+        $.fn.select2.defaults.set("theme", "bootstrap");
+
+        $(".input-group-select select").select2({
+            dropdownCssClass: 'select2-containr-sty-common',
+            minimumResultsForSearch: -1,
+        });
+
+    } catch(err) {
+    }
+    
 
     /*-----------------------------------------------------------------
         手機板地圖

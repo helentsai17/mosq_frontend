@@ -37,7 +37,7 @@ app.get('/tainan_en',function(req,res){
     res.sendFile(__dirname+ "/index2_en.html")
 })
 
-app.get('/tainan/detailed_en',function(req,res){
+app.get('/tainan/detail_en',function(req,res){
     res.sendFile(__dirname+ "/detailed_en.html")
 })
 

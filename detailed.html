@@ -114,7 +114,7 @@
                                 </div>
                                 <div class="box-main scrollbar-wrap">
                                     <div class="col-label">
-                                        <a  href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil1.json">
+                                        <a  href="javascript:;" class="label change-detaile" data-source="/data/data (1).json">
                                             頂安里
                                         </a>
                                     </div>
@@ -168,7 +168,7 @@
                                 </div>
                                 <div class="box-main scrollbar-wrap">
                                     <div class="col-label">
-                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil4.json">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/data (2).json">
                                             州南里
                                         </a>
                                     </div>
@@ -232,12 +232,12 @@
                                 </div>
                                 <div class="box-main scrollbar-wrap">
                                     <div class="col-label">
-                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil3.json">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/data (4).json">
                                             淵中里
                                         </a>
                                     </div>
                                     <div class="col-label">
-                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil2.json">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/data (2).json">
                                             海西里
                                         </a>
                                     </div>
@@ -271,7 +271,7 @@
                                 </div>
                                 <div class="box-main scrollbar-wrap">
                                     <div class="col-label">
-                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil7.json">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/data (3).json">
                                             顯公里
                                         </a>
                                     </div>
@@ -391,6 +391,9 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js'></script>
     <!-- lodash -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.core.min.js"></script>
+    <!-- select2 -->
+    <script src="/plugin/select/js/select2.full.min.js"></script>
+    <script src="/plugin/select/js/i18n/zh-TW.js"></script>
     <!-- Scrollbar -->
     <script src="/plugin/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
     <script src="/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -471,6 +474,7 @@
                     // hvoer時 邊界顏色
                     hoverBorderColor: 'rgba(253, 228, 159, .1)',
                     data: [],
+                    yAxisID: 'y-axis-1',
                 },
 
                 '溫度': {
@@ -481,16 +485,19 @@
                     groupId: '溫度',
                     steppedLine: false,
                     type: 'line',
+                    pointRadius: 0,
+                    borderDash :[10, 10],
                     // 背景色
-                    pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+                    pointBackgroundColor: 'rgba(75, 192, 192, 1)',
                     // hover時 背景色
-                    pointHoverBackgroundColor: 'rgba(253, 0, 0, .1)',
-                    borderWidth: 1,
+                    pointHoverBackgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    borderWidth: 2,
                     // 邊界顏色
-                    borderColor: 'rgba(253, 0, 0, 1)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
                     // hvoer時 邊界顏色
-                    hoverBorderColor: 'rgba(253, 0, 0, .1)',
+                    hoverBorderColor: 'rgba(75, 192, 192, 0.1)',
                     data: [],
+                    yAxisID: 'y-axis-1',
                 },
 
                 '成蟲指數': {
@@ -505,6 +512,7 @@
                     borderColor: 'rgba(178, 178, 250, 1)',
                     hoverBorderColor: 'rgba(178, 178, 250, .1)',
                     data: [],
+                    yAxisID: 'y-axis-0',
                 },
 
                 '每百戶積水容器數': {
@@ -519,6 +527,7 @@
                     borderColor: 'rgba(254, 188, 188, 1)',
                     hoverBorderColor: 'rgba(254, 188, 188, .1)',
                     data: [],
+                    yAxisID: 'y-axis-0',
                 },
             }
 
@@ -586,7 +595,7 @@
                                 display: true,
                                 fontColor: 'rgba(255,255,255,.7)',
                                 fontSize: 12,
-                                labelString: '每百戶積水容器數'
+                                labelString: '每百戶積水容器數/ 成蟲指數*100'
                             },
                             ticks: {
                                 // 刻度
@@ -605,7 +614,7 @@
                                 display: true,
                                 fontColor: 'rgba(255,255,255,.7)',
                                 fontSize: 12,
-                                labelString: '布氏指數 / 成蟲指數*100 / 住宅指數'
+                                labelString: '布氏指數 / 住宅指數 /溫度'
                             },
                             ticks: {
                                 // 刻度
@@ -945,7 +954,7 @@
             $('.select-lang').change(function(){
                 var selected = this.value;
                 if ( selected == 'en'){
-                    location.href='detailed_en.html';
+                    location.href='/tainan/detail_en';
                 }
             });
 
@@ -1318,6 +1327,9 @@
                 '/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css', 
                 // calendar core
                 '/plugin/fullcalendar-4.3.1/packages/core/main.min.css',
+                // select2
+                '/plugin/select/css/select2.min.css',
+                '/plugin/select/themes/select2-bootstrap.min.css',
                 // Calendar
                 '/plugin/fullcalendar-4.3.1/packages/daygrid/main.min.css',
                 // Calendar
