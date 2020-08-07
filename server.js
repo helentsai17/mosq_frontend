@@ -41,6 +41,11 @@ app.get('/tainan/detail_en',function(req,res){
     res.sendFile(__dirname+ "/detailed_en.html")
 })
 
+//Australia english part
+app.get('/au',function(req,res){
+    res.sendFile(__dirname+ "/index_australia.html")
+})
+
 
 app.listen(3000 ,function(){
     console.log("server is running on port 3000");

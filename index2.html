@@ -298,18 +298,7 @@
                 map(".future", "data/demo2.json");
             });
 
-        var svg3 = d3.select(".future")
-            .append("svg")
-            .attr('class', 'map')
-            .attr("width", "100%")
-            .attr("height", "100%")
-            .call(zoom)
-            .call(drag)
-            .append("g")
-            .attr("class", "country-wrap")
-            .call(function () {
-                map(".future", "data/demo3.json");
-            });
+        
 
         function map(el, json_data) {
             //1.地理資料檔: GeoJSON or TopoJSON
