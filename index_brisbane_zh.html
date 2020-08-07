@@ -18,7 +18,7 @@
     <header class="header">
         <div class="container">
             <div class="header-col col-left">
-                <a href="/index_australia_zh.html" class="logo-box">
+                <a href="/au_zh" class="logo-box">
                     <img src="/assets/images/logo/logo.svg" class="img-logo" alt="" srcset="">
                 </a>
                 <div class="logo-txt">
@@ -1060,7 +1060,7 @@
         $('.select-lang').change(function(){
             var selected = this.value;
             if ( selected == 'en'){
-                location.href='index_brisbane.html';
+                location.href='/au/queensland/brisbane';
             }
         });
         // 地圖上次位置
@@ -1366,7 +1366,7 @@
             if (d3.event && d3.event.defaultPrevented) return; // dragged
 
             var data = $(this).data('custom-properties');
-            var url = "index_redland_zh.html";
+            var url = "/au_zh/queensland_zh/brisbane_zh/redland_zh";
             window.location = url;
             // if( data.properties.COUNTYNAME == 'Queensland'){
             //     var url = "index2.html";
