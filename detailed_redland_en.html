@@ -88,7 +88,7 @@
                     <div class="form-group" style="margin-right: 0">
                         <div class="input-group input-group-select">
                             <select class="custom-select select-district">
-                                <option value="Redland Bay , /data/demo_detailed2.json">Redland Bay</option>
+                                <option value="Redland Bay , /data/2_1_high_russellisland.json">Redland Bay</option>
                                 <option value="Capalaba , /data/demo_detailed.json">Capalaba</option>
                             </select>
                         </div>
@@ -111,12 +111,12 @@
                                 </div>
                                 <div class="box-main scrollbar-wrap">
                                     <div class="col-label">
-                                        <a  href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil1.json">
+                                        <a  href="javascript:;" class="label change-detaile" data-source="/data/2_1_high_russellisland.json">
                                             Southern Moreton Bay Island
                                         </a>
                                     </div>
                                     <div class="col-label">
-                                        <a href="javascript:;"  class="label change-detaile" data-source="/data/demo_detailed_vil2.json">
+                                        <a href="javascript:;"  class="label change-detaile" data-source="/data/demo_detailed_vil3.json">
                                             Redland Bay
                                         </a>
                                     </div>
@@ -139,17 +139,18 @@
                                      High  (<span class="region-count">5</span>)
                                 </div>
                                 <div class="box-main scrollbar-wrap">
+                                    <div class="col-label">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/1_1_med_victoriapoint.json">
+                                            Victoria Point
+                                        </a>
+                                    </div>
                                     
                                     <div class="col-label">
                                         <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil1.json">
                                             Thorneside
                                         </a>
                                     </div>
-                                    <div class="col-label">
-                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil2.json">
-                                            Victoria Point
-                                        </a>
-                                    </div>
+                                    
                                     <div class="col-label">
                                         <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil3.json">
                                             Wellington Point
@@ -186,7 +187,7 @@
                                         </a>
                                     </div>
                                     <div class="col-label">
-                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil3.json">
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/4_1_mod_cocoisland.json">
                                             Coochiemudlo lsland
                                         </a>
                                     </div>
@@ -200,15 +201,14 @@
                                     Low (<span class="region-count">5</span>)
                                 </div>
                                 <div class="box-main scrollbar-wrap">
-                                    
                                     <div class="col-label">
-                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil1.json">
-                                            Capalaba
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/3_1_low_cleveland.json">
+                                            Cleveland
                                         </a>
                                     </div>
                                     <div class="col-label">
-                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil2.json">
-                                            Cleveland
+                                        <a href="javascript:;" class="label change-detaile" data-source="/data/demo_detailed_vil1.json">
+                                            Capalaba
                                         </a>
                                     </div>
                                     <div class="col-label">
@@ -342,12 +342,12 @@
 
             // 表格 欄位 設定
             var chart_dataset_setting = {
-                '布氏指數': {
+                '幼蟲密度': {
                     // 顯示名稱
-                    label: 'Breteau index',
-                    formalName: '布氏指數',
+                    label: 'larval density',
+                    formalName: '幼蟲密度',
                     // 群組識別
-                    groupId: '布氏指數',
+                    groupId: '幼蟲密度',
                     steppedLine: false,
                     type: 'line',
                     // 背景色
@@ -360,13 +360,14 @@
                     // hvoer時 邊界顏色
                     hoverBorderColor: 'rgba(253, 228, 159, .1)',
                     data: [],
+                    yAxisID: 'y-axis-1',
                 },
 
-                '成蟲指數': {
-                    label: 'Adult index*100',
-                    formalName: '成蟲指數',
+                '降雨量': {
+                    label: 'rain fall/10(mm)',
+                    formalName: '降雨量',
                     // 群組識別
-                    groupId: '成蟲指數',
+                    groupId: '降雨量',
                     type: 'line',
                     pointBackgroundColor: 'rgba(178, 178, 250, 1)',
                     pointHoverBackgroundColor: 'rgba(178, 178, 250, .1)',
@@ -374,22 +375,48 @@
                     borderColor: 'rgba(178, 178, 250, 1)',
                     hoverBorderColor: 'rgba(178, 178, 250, .1)',
                     data: [],
+                    yAxisID: 'y-axis-1',
                 },
 
 
-                '每百戶積水容器數': {
-                    label: 'Container index',
-                    formalName: '每百戶積水容器數',
+                '溫度': {
+                    label: 'temperature ',
+                    formalName: '溫度',
                     // 群組識別
-                    groupId: '每百戶積水容器數',
+                    groupId: '溫度',
                     type: 'line',
-                    pointBackgroundColor: 'rgba(254, 188, 188, 1)',
-                    pointHoverBackgroundColor: 'rgba(254, 188, 188, .1)',
+                    pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                    pointHoverBackgroundColor: 'rgba(75, 192, 192, 0.1)',
                     borderWidth: 1,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    hoverBorderColor: 'rgba(75, 192, 192, 0.1)',
+                    data: [],
+                    yAxisID: 'y-axis-1',
+                },
+
+                '預測': {
+                    // 顯示名稱
+                    label: 'prediction',
+                    formalName: '預測',
+                    // 群組識別
+                    groupId: '預測',
+                    steppedLine: false,
+                    type: 'line',
+                    pointRadius: 0,
+                    borderDash :[3, 3],
+                    // 背景色
+                    pointBackgroundColor: 'rgba(254, 188, 188, 1)',
+                    // hover時 背景色
+                    pointHoverBackgroundColor: 'rgba(254, 188, 188, .1)',
+                    borderWidth: 2,
+                    // 邊界顏色
                     borderColor: 'rgba(254, 188, 188, 1)',
+                    // hvoer時 邊界顏色
                     hoverBorderColor: 'rgba(254, 188, 188, .1)',
                     data: [],
+
                 },
+
             }
 
             // Hover 狀態 Flag
@@ -460,7 +487,7 @@
                             },
                             ticks: {
                                 // 刻度
-                                max: 80,
+                                max: 20,
                                 min: 0,
                                 stepSize: 20,
                                 fontColor: 'rgba(255,255,255,.7)'
@@ -633,7 +660,7 @@
                         // 表格設定
                         chart_option: chart_option,
                         chart_dataset_setting: chart_dataset_setting,
-                        source_src: '/data/demo_detailed.json',
+                        source_src: '/data/1_1_med_victoriapoint.json',
                         source: '',
                         datasets: [],
                         info: {}
