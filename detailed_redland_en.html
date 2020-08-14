@@ -229,7 +229,7 @@
                                 <img src="/assets/images/corner1.png" class="corner left-bottom" alt="" srcset="">
                                 <img src="/assets/images/corner1.png" class="corner right-bottom" alt="" srcset="">
                                 <div class="corner-box-main">
-                                    <h2 class="chart-title">Index of dengue fever</h2>
+                                    <h2 class="chart-title">weather data and larval prediction</h2>
                                     <div class="line-chart box-main-inner" id="chart1-wrap">
                                         <div class="aspect-ratio">
                                             <canvas id="chart1"></canvas>
@@ -380,7 +380,7 @@
 
 
                 '溫度': {
-                    label: 'temperature ',
+                    label: 'temperature',
                     formalName: '溫度',
                     // 群組識別
                     groupId: '溫度',
@@ -462,7 +462,7 @@
                             lineWidth: 1
                         },
                         scaleLabel: {
-                            display: true,
+                            display: false,
                             fontColor: 'rgba(255,255,255,.7)',
                             fontSize: 12,
                             labelString: 'Weekly'
@@ -483,7 +483,7 @@
                                 display: true,
                                 fontColor: 'rgba(255,255,255,.7)',
                                 fontSize: 12,
-                                labelString: 'Container index'
+                                labelString: 'prediction'
                             },
                             ticks: {
                                 // 刻度
@@ -502,7 +502,7 @@
                                 display: true,
                                 fontColor: 'rgba(255,255,255,.7)',
                                 fontSize: 12,
-                                labelString: 'Breteau index / Adult index*100'
+                                labelString: 'larval density / rain fall/10(mm) / temperature'
                             },
                             ticks: {
                                 // 刻度
